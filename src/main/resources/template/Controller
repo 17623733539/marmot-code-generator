@@ -1,0 +1,149 @@
+/*
+ * Copyright (c)  ${YEAR},  DataPipeline
+ * All rights reserved.
+ *
+ * Id:${className}Controller.java   ${YEAR}-${MONTH}-${DAY} ${TIME} ${USER}
+ */
+package ${controllerPackage};
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import ${controllerPackage}.vo.*;
+import ${entityPackage}.${NAME};
+import io.common.commom.util.BeanConvertUtils;
+import io.common.core.response.R;
+import io.common.core.response.ResultMessage;
+import ${servicePackage}.${className}Service;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * <p>
+ * Title: ${className}Controller
+ * </p>
+ * <p>
+ * Description: ${className}Controller
+ * </p>
+ * <p>
+ * Copyright: Copyright (c) ${YEAR}
+ * </p>
+ * <p>
+ * Company/Department: 虫洞-技术栈
+ * </p>
+ *
+ * @author  ${USER}
+ * @since   ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ */
+
+@Api(value = "${className}", tags = {"${className}管理（列表、创建、更新、删除）"})
+@Slf4j
+@RestController
+@RequestMapping("/${controllerPrefix}/${controllerPathPrefix}")
+public class  ${className}Controller {
+
+    @Resource
+    ${className}Service service;
+
+
+    /***
+      * 根据id查询
+      * @param id 请求参数
+      * @return  R<${className}QueryRespVo>
+      */
+     @ApiOperation(value="按Id${className}查询", notes="${className}查询")
+     @GetMapping()
+     public R<${className}QueryRespVo> get(@RequestParam Long id) {
+         ${NAME} obj = service.getById(id);
+         ${className}QueryRespVo respVo=new ${className}QueryRespVo();
+         BeanConvertUtils.convert(obj, ${className}QueryRespVo.class);
+         return R.ok(respVo);
+     }
+
+     /***
+     * 分页查询
+     * @param pageNumber,size 请求参数
+     * @return  R<Page<${NAME}PageRespVo>>
+     */
+    @ApiOperation(value="分页查询", notes="分页查询")
+    @PostMapping("/pageable")
+    public R<IPage<${NAME}>> pageable(@RequestParam Integer pageNumber, @RequestParam Integer size) {
+        Page page = new Page(pageNumber, size);
+        IPage<${NAME}> entities = service.page(page);
+        return R.ok(entities);
+    }
+
+
+    /***
+     *  创建
+     * @param reqVo ${className}CreateReqVo
+     * @return  R<Void>
+     */
+    @ApiOperation(value="创建", notes="创建")
+    @PostMapping("/create")
+    public R<Void> create(@RequestBody ${className}CreateReqVo reqVo) {
+        ${NAME} entity = BeanConvertUtils.convert(reqVo, ${NAME}.class);
+        //更新数据
+        service.save(entity);
+        return R.ok (ResultMessage.CREATE_ok);
+    }
+
+    /***
+     *  更新
+     * @param  reqVo ${className}UpdateReqVo
+     * @return  R<Void>
+     */
+    @ApiOperation(value="更新", notes="更新")
+    @PutMapping("/update")
+    public R<Void> update(@RequestParam Long id,@RequestBody  ${className}UpdateReqVo reqVo) {
+         ${NAME} entity=service.getById (id);
+        if(entity==null){
+           return R.error(ResultMessage.UPDATED_NO_DATA);
+        }
+        entity = BeanConvertUtils.convert(reqVo, ${NAME}.class);
+        //更新数据
+        service.updateById(entity);
+        return R.ok (ResultMessage.UPDATE_ok);
+    }
+
+
+
+
+
+    /***
+    * 根据ID删除
+    * @param id ID
+    * @return R<Void>
+    */
+   @ApiOperation(value="删除", notes="删除")
+   @DeleteMapping()
+   public R<Void> delById(@RequestParam Long id) {
+       this.service.removeById (id);
+       return R.ok (ResultMessage.DELETED_ok);
+   }
+
+   /***
+    * 批量删除
+    * @param reqVo IDS
+    * @return R<Void>
+    */
+   @ApiOperation(value="批量删除", notes="批量删除")
+   @PostMapping("/del")
+   public R<Void> del(@RequestBody  ${className}DeleteReqVo reqVo) {
+
+       if(CollectionUtils.isEmpty (reqVo.getList ())){
+          return  R.error (ResultMessage.DELETED_NO_DATA);
+       }
+       //批量删除
+       reqVo.getList ().stream ().forEach (dataVo ->this.service.removeById (dataVo.getId ()));
+       return R.ok (ResultMessage.DELETED_ok);
+   }
+}

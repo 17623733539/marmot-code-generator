@@ -1,0 +1,40 @@
+/*
+ * Copyright (c)  2019,  DataPipeline
+ * All rights reserved.
+ *
+ * Id:${className}DeleteReqVo.java   ${YEAR}-${MONTH}-${DAY} ${TIME} ${USER}
+ */
+package ${controllerPackageVo};
+import io.common.core.vo.PageRespVo;
+import java.util.Date;
+import java.math.BigDecimal;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+/**
+ * <p>
+ * Title: ${className}PageRespVo
+ * </p>
+ * <p>
+ * Description: ${className}PageRespVo (分页查询响应)
+ * </p>
+ * <p>
+ * Copyright: Copyright (c) ${YEAR}
+ * </p>
+ * <p>
+ * Company/Department: 虫洞-技术栈
+ * </p>
+ *
+ * @author ${USER}
+ * @since   ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ */
+@Setter
+@Getter
+@ApiModel(value ="${className}PageRespVo")
+public class ${className}PageRespVo extends  PageRespVo {
+
+${voContent}
+
+}

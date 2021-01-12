@@ -1,0 +1,40 @@
+/*
+ * Copyright (c)  2019,  DataPipeline
+ * All rights reserved.
+ *
+ * Id:${className}DeleteReqVo.java   ${YEAR}-${MONTH}-${DAY} ${TIME} ${USER}
+ */
+package ${controllerPackageVo};
+import io.common.core.vo.HandleReqVo;
+import java.math.BigDecimal;
+import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+/**
+ * <p>
+ * Title: ${className}HandleReqVo
+ * </p>
+ * <p>
+ * Description: ${NAME}HandleReqVo (Add&Update)
+ * </p>
+ * <p>
+ * Copyright: Copyright (c) ${YEAR}
+ * </p>
+ * <p>
+ * Company/Department: 虫洞-技术栈
+ * </p>
+ *
+ * @author ${USER}
+ * @since   ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ */
+@Setter
+@Getter
+@ApiModel(value ="${className}HandleReqVo")
+public class ${className}UpdateReqVo extends HandleReqVo {
+
+${voContent}
+
+}

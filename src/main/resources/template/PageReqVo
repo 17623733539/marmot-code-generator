@@ -1,0 +1,40 @@
+/*
+ * Copyright (c)  2019,  DataPipeline
+ * All rights reserved.
+ *
+ * Id:${className}DeleteReqVo.java   ${YEAR}-${MONTH}-${DAY} ${TIME} ${USER}
+ */
+package ${controllerPackageVo};
+import java.util.Date;
+import io.common.core.vo.PageReqVo;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+import java.math.BigDecimal;
+/**
+ * <p>
+ * Title: ${className}PageReqVo
+ * </p>
+ * <p>
+ * Description: ${className}PageReqVo (分页请求类)
+ * </p>
+ * <p>
+ * Copyright: Copyright (c) ${YEAR}
+ * </p>
+ * <p>
+ * Company/Department: 虫洞-技术栈
+ * </p>
+ *
+ * @author ${USER}
+ * @since   ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ */
+@Setter
+@Getter
+@ApiModel(value ="${className}PageReqVo")
+public class ${className}PageReqVo extends  PageReqVo {
+
+${voContent}
+
+}

@@ -1,0 +1,34 @@
+/*
+ * Copyright (c)  ${YEAR},  DataPipeline
+ * All rights reserved.
+ *
+ * Id:${className}Mapper.java   ${YEAR}-${MONTH}-${DAY} ${TIME} ${USER}
+ */
+package ${mapperPackage};
+
+import ${entityPackage}.${NAME};
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+
+/**
+ * <p>
+ * Title: ${className}Mapper
+ * </p>
+ * <p>
+ * Description: ${className}Mapper
+ * </p>
+ * <p>
+ * Copyright: Copyright (c) ${YEAR}
+ * </p>
+ * <p>
+ * Company/Department: 虫洞-技术栈
+ * </p>
+ *
+ * @author  ${USER}
+ * @since   ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ */
+
+public interface ${className}Mapper extends BaseMapper<${NAME}> {
+
+}

@@ -1,0 +1,47 @@
+/*
+ * Copyright (c)  ${YEAR}, DataPipeline
+ * All rights reserved.
+ *
+ * Id:${className}ServiceImpl.java   ${YEAR}-${MONTH}-${DAY} ${TIME} ${USER}
+ */
+package ${serviceImplPackage};
+
+import ${entityPackage}.${NAME};
+import ${servicePackage}.${className}Service;
+import ${mapperPackage}.${className}Mapper;
+import lombok.extern.slf4j.Slf4j;
+import java.sql.SQLException;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import javax.annotation.Resource;
+import java.util.Collection;
+import java.util.List;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
+
+/**
+ * <p>
+ * Title: ${className}ServiceImpl
+ * </p>
+ * <p>
+ * Description: ${className}ServiceImpl
+ * </p>
+ * <p>
+ * Copyright: Copyright (c) ${YEAR}
+ * </p>
+ * <p>
+ * Company/Department: 虫洞-技术栈
+ * </p>
+ *
+ * @author  ${USER}
+ * @since   ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ */
+@Slf4j
+@Service
+@Transactional(readOnly = true,timeout = 30,rollbackFor = {SQLException.class})
+public class  ${className}ServiceImpl  extends ServiceImpl<${className}Mapper, ${className}Entity> implements ${className}Service {
+
+    @Resource
+    ${className}Mapper  mapper;
+}

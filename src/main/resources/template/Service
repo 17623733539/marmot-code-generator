@@ -1,0 +1,31 @@
+/*
+ * Copyright (c)  ${YEAR}  DataPipeline
+ * All rights reserved.
+ * ${className}.java ${YEAR}-${MONTH}-${DAY} ${TIME}
+ */
+package ${servicePackage};
+
+import ${entityPackage}.${NAME};
+import com.baomidou.mybatisplus.extension.service.IService;
+/**
+ * <p>
+ * Title: ${className}Service
+ * </p>
+ * <p>
+ * Description: ${className}Service
+ * </p>
+ * <p>
+ * Copyright: Copyright (c) ${YEAR}
+ * </p>
+ * <p>
+ * Company/Department: 虫洞-技术栈
+ * </p>
+ *
+ * @author  ${USER}
+ * @since   ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ */
+
+public interface  ${className}Service extends IService<${NAME}>{
+
+}

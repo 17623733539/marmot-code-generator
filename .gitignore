@@ -1,0 +1,54 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!modelink-service/modelink-web/src/main/java
+!**/src/test/**
+**/target/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+../.idea
+.idea
+*.iws
+*.iml
+*.ipr
+*.class
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+*.project
+audience-model/.settings/
+audience-common/.settings/
+audience-core/.settings/
+audience-parent/.settings/
+audience-service/.settings/
+audience-web/.settings/
+audience-processor/.settings/
+audience-web-application/.settings/
+audience-mapper/.settings/
+.settings/
+*.classpath
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+*.iml~686c42f24a86d0d8ac1cda88f9c5e103eb15349d
